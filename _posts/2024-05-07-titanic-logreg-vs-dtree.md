@@ -71,5 +71,5 @@ In summary, the decision tree performs similarly to logistic regression in terms
 
 This suggests that either model is a solid baseline, and you could potentially improve performance by trying **ensemble methods** like Random Forest or Gradient Boosting.
 
-📓 **Notebook link**: [View the code on Colab] https://colab.research.google.com/drive/1-6joDrE4xk1eAVWWKoNyep7PwVV5wPmu?usp=sharing
+📓 **Notebook link**: [View the code on Colab] (https://colab.research.google.com/drive/1-6joDrE4xk1eAVWWKoNyep7PwVV5wPmu?usp=sharing)
 
