@@ -35,7 +35,7 @@ To evaluate performance, I plotted an ROC curve. The Area Under the Curve (AUC) 
 - Logistic Regression was a good start but limited by its linear nature.
 - Random Forest, with proper tuning, captured more complexity and performed better overall.
 
-You can view the full Colab notebook [here](https://colab.research.google.com/drive/...). *(Replace with your actual link.)*
+You can view the full Colab notebook [here](https://colab.research.google.com/drive/1l8KhMCuKghstI6_S9xEH7Ziofui0Siiw?usp=sharing). 
 
 This project was a significant step up from the Titanic dataset in terms of modeling complexity and medical relevance. Next, I plan to explore XGBoost, text classification, or unsupervised learning!
 
