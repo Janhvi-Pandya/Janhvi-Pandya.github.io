@@ -5,7 +5,7 @@ layout: default
 <style>
   .sections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 20px;
   }
@@ -36,14 +36,24 @@ layout: default
     margin-right: 10px;
   }
 
-  .post-listing h3 {
-    margin-bottom: 5px;
-    font-size: 1.1em;
+  .post-card {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
   }
 
-  .post-listing p {
+  .post-title {
+    font-size: 1.05em;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #2a2a2a;
+  }
+
+  .post-excerpt {
     font-size: 0.95em;
-    color: #444;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.5;
   }
 
   .read-more {
@@ -68,9 +78,9 @@ layout: default
     {% assign kaggle_posts = site.categories.kaggle %}
     {% if kaggle_posts %}
       {% for post in kaggle_posts %}
-        <div class="post-listing">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <div class="post-card">
+          <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
           <a href="{{ post.url }}" class="read-more">Read more →</a>
         </div>
       {% endfor %}
@@ -85,9 +95,9 @@ layout: default
     {% assign math_posts = site.categories.math %}
     {% if math_posts %}
       {% for post in math_posts %}
-        <div class="post-listing">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <div class="post-card">
+          <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
           <a href="{{ post.url }}" class="read-more">Read more →</a>
         </div>
       {% endfor %}
@@ -102,9 +112,9 @@ layout: default
     {% assign sql_posts = site.categories.sql %}
     {% if sql_posts %}
       {% for post in sql_posts %}
-        <div class="post-listing">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <div class="post-card">
+          <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
           <a href="{{ post.url }}" class="read-more">Read more →</a>
         </div>
       {% endfor %}
@@ -119,9 +129,9 @@ layout: default
     {% assign theory_posts = site.categories.theory %}
     {% if theory_posts %}
       {% for post in theory_posts %}
-        <div class="post-listing">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <div class="post-card">
+          <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
           <a href="{{ post.url }}" class="read-more">Read more →</a>
         </div>
       {% endfor %}
@@ -136,9 +146,9 @@ layout: default
     {% assign genai_posts = site.categories.genai %}
     {% if genai_posts %}
       {% for post in genai_posts %}
-        <div class="post-listing">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <div class="post-card">
+          <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
           <a href="{{ post.url }}" class="read-more">Read more →</a>
         </div>
       {% endfor %}
