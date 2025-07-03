@@ -2,89 +2,84 @@
 layout: default
 ---
 
+<style>
+  .section {
+    background-color: #f9f9f9;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .section h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+  }
+
+  .section h2 span {
+    margin-right: 10px;
+    font-size: 1.4em;
+  }
+
+  .post-listing {
+    margin-top: 10px;
+  }
+
+  .post-listing h3 {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+  }
+
+  .read-more {
+    font-size: 0.9em;
+    color: #007ACC;
+    text-decoration: none;
+  }
+
+  .read-more:hover {
+    text-decoration: underline;
+  }
+</style>
+
 <h1>Welcome to My Learning Journey</h1>
 <p>This blog documents my exploration of data science topics and tools.</p>
 
-<div class="posts">
+<div class="section">
+  <h2><span>📊</span>Exploring Kaggle Datasets</h2>
+  <div class="post-listing">
+    {% assign kaggle_posts = site.categories.kaggle %}
+    {% if kaggle_posts %}
+      {% for post in kaggle_posts %}
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <a href="{{ post.url }}" class="read-more">Read more →</a>
+        <hr />
+      {% endfor %}
+    {% else %}
+      <p>No Kaggle posts yet. Coming soon!</p>
+    {% endif %}
+  </div>
+</div>
 
-  <h2>📊 Exploring Kaggle Datasets</h2>
-  {% assign kaggle_posts = site.categories.kaggle %}
-  {% if kaggle_posts %}
-    {% for post in kaggle_posts %}
-      <article class="post">
-        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-        <div class="entry">
-          {{ post.excerpt }}
-        </div>
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      </article>
-    {% endfor %}
-  {% else %}
-    <p>No Kaggle posts yet. Coming soon!</p>
-  {% endif %}
+<div class="section">
+  <h2><span>📘</span>Math for Data Science</h2>
+  <p>No Math posts yet. Coming soon!</p>
+</div>
 
-  <h2>📘 Math for Data Science</h2>
-  {% assign math_posts = site.categories.math %}
-  {% if math_posts %}
-    {% for post in math_posts %}
-      <article class="post">
-        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-        <div class="entry">
-          {{ post.excerpt }}
-        </div>
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      </article>
-    {% endfor %}
-  {% else %}
-    <p>No Math posts yet. Coming soon!</p>
-  {% endif %}
+<div class="section">
+  <h2><span>💾</span>Learning SQL</h2>
+  <p>No SQL posts yet. Coming soon!</p>
+</div>
 
-  <h2>💾 Learning SQL</h2>
-  {% assign sql_posts = site.categories.sql %}
-  {% if sql_posts %}
-    {% for post in sql_posts %}
-      <article class="post">
-        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-        <div class="entry">
-          {{ post.excerpt }}
-        </div>
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      </article>
-    {% endfor %}
-  {% else %}
-    <p>No SQL posts yet. Coming soon!</p>
-  {% endif %}
+<div class="section">
+  <h2><span>📚</span>Reading & Theory</h2>
+  <p>No theory posts yet. Coming soon!</p>
+</div>
 
-  <h2>📚 Reading & Theory</h2>
-  {% assign theory_posts = site.categories.theory %}
-  {% if theory_posts %}
-    {% for post in theory_posts %}
-      <article class="post">
-        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-        <div class="entry">
-          {{ post.excerpt }}
-        </div>
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      </article>
-    {% endfor %}
-  {% else %}
-    <p>No theory posts yet. Coming soon!</p>
-  {% endif %}
-
-  <h2>🤖 Generative AI</h2>
-  {% assign genai_posts = site.categories.genai %}
-  {% if genai_posts %}
-    {% for post in genai_posts %}
-      <article class="post">
-        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-        <div class="entry">
-          {{ post.excerpt }}
-        </div>
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      </article>
-    {% endfor %}
-  {% else %}
-    <p>No GenAI posts yet. Coming soon!</p>
-  {% endif %}
-
+<div class="section">
+  <h2><span>🤖</span>Generative AI</h2>
+  <p>No GenAI posts yet. Coming soon!</p>
 </div>
