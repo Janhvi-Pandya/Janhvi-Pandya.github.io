@@ -2,17 +2,89 @@
 layout: default
 ---
 
+<h1>Welcome to My Learning Journey</h1>
+<p>This blog documents my exploration of data science topics and tools.</p>
+
 <div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+  <h2>📊 Exploring Kaggle Datasets</h2>
+  {% assign kaggle_posts = site.categories.kaggle %}
+  {% if kaggle_posts %}
+    {% for post in kaggle_posts %}
+      <article class="post">
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="entry">
+          {{ post.excerpt }}
+        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p>No Kaggle posts yet. Coming soon!</p>
+  {% endif %}
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+  <h2>📘 Math for Data Science</h2>
+  {% assign math_posts = site.categories.math %}
+  {% if math_posts %}
+    {% for post in math_posts %}
+      <article class="post">
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="entry">
+          {{ post.excerpt }}
+        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p>No Math posts yet. Coming soon!</p>
+  {% endif %}
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+  <h2>💾 Learning SQL</h2>
+  {% assign sql_posts = site.categories.sql %}
+  {% if sql_posts %}
+    {% for post in sql_posts %}
+      <article class="post">
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="entry">
+          {{ post.excerpt }}
+        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p>No SQL posts yet. Coming soon!</p>
+  {% endif %}
+
+  <h2>📚 Reading & Theory</h2>
+  {% assign theory_posts = site.categories.theory %}
+  {% if theory_posts %}
+    {% for post in theory_posts %}
+      <article class="post">
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="entry">
+          {{ post.excerpt }}
+        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p>No theory posts yet. Coming soon!</p>
+  {% endif %}
+
+  <h2>🤖 Generative AI</h2>
+  {% assign genai_posts = site.categories.genai %}
+  {% if genai_posts %}
+    {% for post in genai_posts %}
+      <article class="post">
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="entry">
+          {{ post.excerpt }}
+        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p>No GenAI posts yet. Coming soon!</p>
+  {% endif %}
+
 </div>
