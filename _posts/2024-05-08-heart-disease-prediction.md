@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "❤️ Heart Disease Prediction Using Logistic Regression vs Random Forest"
+title: " Heart Disease Prediction Using Logistic Regression vs Random Forest"
 date: 2024-05-08
+categories: kaggle
 ---
 
 In this blog post, I analyze the UCI Heart Disease dataset to predict whether a patient has heart disease using two machine learning models: Logistic Regression and Random Forest. This project builds on my Titanic dataset analysis but introduces more features, non-linear relationships, and advanced evaluation methods like AUC and ROC curves.
