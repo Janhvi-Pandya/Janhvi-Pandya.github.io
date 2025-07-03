@@ -3,34 +3,47 @@ layout: default
 ---
 
 <style>
+  .sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
   .section {
-    background-color: #f9f9f9;
-    border: 1px solid #e3e3e3;
-    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
     padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
   }
 
   .section h2 {
-    margin-top: 0;
-    font-size: 1.5em;
     display: flex;
     align-items: center;
+    font-size: 1.3em;
+    margin-bottom: 15px;
   }
 
   .section h2 span {
+    font-size: 1.5em;
     margin-right: 10px;
-    font-size: 1.4em;
-  }
-
-  .post-listing {
-    margin-top: 10px;
   }
 
   .post-listing h3 {
     margin-bottom: 5px;
-    font-size: 1.2em;
+    font-size: 1.1em;
+  }
+
+  .post-listing p {
+    font-size: 0.95em;
+    color: #444;
   }
 
   .read-more {
@@ -47,39 +60,91 @@ layout: default
 <h1>Welcome to My Learning Journey</h1>
 <p>This blog documents my exploration of data science topics and tools.</p>
 
-<div class="section">
-  <h2><span>📊</span>Exploring Kaggle Datasets</h2>
-  <div class="post-listing">
+<div class="sections-grid">
+
+  <!-- Kaggle -->
+  <div class="section">
+    <h2><span>📊</span>Exploring Kaggle Datasets</h2>
     {% assign kaggle_posts = site.categories.kaggle %}
     {% if kaggle_posts %}
       {% for post in kaggle_posts %}
-        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        <a href="{{ post.url }}" class="read-more">Read more →</a>
-        <hr />
+        <div class="post-listing">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          <a href="{{ post.url }}" class="read-more">Read more →</a>
+        </div>
       {% endfor %}
     {% else %}
       <p>No Kaggle posts yet. Coming soon!</p>
     {% endif %}
   </div>
-</div>
 
-<div class="section">
-  <h2><span>📘</span>Math for Data Science</h2>
-  <p>No Math posts yet. Coming soon!</p>
-</div>
+  <!-- Math -->
+  <div class="section">
+    <h2><span>📘</span>Math for Data Science</h2>
+    {% assign math_posts = site.categories.math %}
+    {% if math_posts %}
+      {% for post in math_posts %}
+        <div class="post-listing">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          <a href="{{ post.url }}" class="read-more">Read more →</a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No Math posts yet. Coming soon!</p>
+    {% endif %}
+  </div>
 
-<div class="section">
-  <h2><span>💾</span>Learning SQL</h2>
-  <p>No SQL posts yet. Coming soon!</p>
-</div>
+  <!-- SQL -->
+  <div class="section">
+    <h2><span>💾</span>Learning SQL</h2>
+    {% assign sql_posts = site.categories.sql %}
+    {% if sql_posts %}
+      {% for post in sql_posts %}
+        <div class="post-listing">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          <a href="{{ post.url }}" class="read-more">Read more →</a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No SQL posts yet. Coming soon!</p>
+    {% endif %}
+  </div>
 
-<div class="section">
-  <h2><span>📚</span>Reading & Theory</h2>
-  <p>No theory posts yet. Coming soon!</p>
-</div>
+  <!-- Theory -->
+  <div class="section">
+    <h2><span>📚</span>Reading & Theory</h2>
+    {% assign theory_posts = site.categories.theory %}
+    {% if theory_posts %}
+      {% for post in theory_posts %}
+        <div class="post-listing">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          <a href="{{ post.url }}" class="read-more">Read more →</a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No theory posts yet. Coming soon!</p>
+    {% endif %}
+  </div>
 
-<div class="section">
-  <h2><span>🤖</span>Generative AI</h2>
-  <p>No GenAI posts yet. Coming soon!</p>
+  <!-- GenAI -->
+  <div class="section">
+    <h2><span>🤖</span>Generative AI</h2>
+    {% assign genai_posts = site.categories.genai %}
+    {% if genai_posts %}
+      {% for post in genai_posts %}
+        <div class="post-listing">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          <a href="{{ post.url }}" class="read-more">Read more →</a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No GenAI posts yet. Coming soon!</p>
+    {% endif %}
+  </div>
+
 </div>
