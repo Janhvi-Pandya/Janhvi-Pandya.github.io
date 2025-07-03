@@ -2,6 +2,7 @@
 layout: post
 title: "Titanic Dataset: Logistic Regression vs Decision Tree"
 date: 2024-05-07
+categories: kaggle
 ---
 
 ### Logistic Regression Model: Interpretation & Explanation
